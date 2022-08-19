@@ -12,6 +12,7 @@ export class TasksService {
       data: {
         title: createTaskDto.title,
         description: createTaskDto.description,
+        authorId: createTaskDto.authorId,
       },
     });
   }
