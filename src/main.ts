@@ -5,6 +5,7 @@ import { AppModule } from './app.module';
 import { PrismaService } from './prisma/prisma.service';
 
 async function bootstrap() {
+  const port = process.env.PORT || 3000;
   //swagger
   const app: INestApplication = await NestFactory.create(AppModule);
   const config = new DocumentBuilder()
@@ -20,7 +21,7 @@ async function bootstrap() {
   const prismaService = app.get(PrismaService);
   await prismaService.enableShutdownHooks(app);
 
-  await app.listen(process.env.PORT || 3000);
-  console.log('http://localhost:' + port);
+  await app.listen(port);
+  // console.log('http://localhost:' + port);
 }
 bootstrap();
