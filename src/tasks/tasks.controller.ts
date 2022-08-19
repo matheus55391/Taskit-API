@@ -20,10 +20,11 @@ export class TasksController {
   //   return await this.tasksService.create(createTaskDto);
   // }
 
-  // @Get()
-  // async findAll() {
-  //   return await this.tasksService.findAll();
-  // }
+  @Get()
+  async findAll() {
+    return await 'All Tasks';
+    // this.tasksService.findAll();
+  }
 
   // @Get(':id')
   // findOne(@Param('id') id: string) {
